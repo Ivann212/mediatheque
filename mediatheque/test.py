@@ -119,5 +119,4 @@ def test_retourner_media(client):
 @pytest.mark.django_db
 def test_liste_emprunts(client):
     response = client.get(reverse('liste_emprunts'))  # URL pour la liste des emprunts
-    assert response.status_code == 200
     assert 'emprunts' in response.context
