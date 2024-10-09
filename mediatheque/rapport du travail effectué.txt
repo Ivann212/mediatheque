@@ -1,0 +1,15 @@
+le code fourni était en un seul fichier, donc pas de fichier pour déclarer les models, je n'ai rien repris de ce code hormis les catégories de class (nom, réalisateur, créateur, artiste et auteur).
+J'ai mis en place les fonctionnalités demandée, c'est a dire créer un membre emprunteur vie la fonction ajoutmembre,
+ afficher la liste des membres grâce à la fonction for {% for membre in membres %} avec une possibilité de supprimer un membre. La mise à jour d'un membre,
+ affichage de la liste des médias grâce à la même fonction for que pour les membres, créer un emprunt pour un média disponible : le media non disponible disparait de la liste donc impossible à emprunter. 
+ Ajout de média via un formulaire de la même sorte que l'ajout d'un membre mais avec uniquement le champ "nom" en "required" afin de pouvoir afficher les champs artiste, 
+ créateur ect uniquement si le champ est rempli donc le champ nom est le seul à remplir obligatoirement. 
+Rentrer un emprunt en prenant le nom et prénom de l'emprunteur et le nom du média à rendre.
+
+
+Je n'ai pas réussi à mettre en place des tests concluants pour toutes les fonctionnalités.
+
+
+Pour lancer le projet voici la marche à suivre : 
+
+creer un environement sur votre machine avec cette commande à coller dans votre terminal : 
