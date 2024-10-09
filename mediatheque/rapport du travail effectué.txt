@@ -9,7 +9,60 @@ Rentrer un emprunt en prenant le nom et prénom de l'emprunteur et le nom du mé
 
 Je n'ai pas réussi à mettre en place des tests concluants pour toutes les fonctionnalités.
 
+stratégie de test :
+     test listemedias : un test pour verifier que la vue listemedias, qui affiche les médias dans l'application, fonctionne correctement
+
+     test deletemedia : Le but de ce test est de vérifier que la fonctionnalité de suppression d'un média fonctionne correctement dans deux cas :
+        Lorsque le média existe et est supprimé avec succès.
+        Lorsque le média n'existe pas et que la vue retourne un message d'erreur approprié.
+
+    test ajoutmedia : L’objectif est de valider que la vue d'ajout de média fonctionne correctement. Le test couvre deux aspects principaux :
+        La capacité à accéder à la page de création de média via une requête GET.
+        La soumission du formulaire de création via une requête POST et la vérification que le média est bien ajouté à la base de données
+    
+    test updatemedia : L'objectif de ce test est de s'assurer que la vue de mise à jour des médias fonctionne correctement. Il couvre deux aspects :
+        La création d'un média de test.
+        La soumission d'une requête POST pour modifier le nom du média et s'assurer que la modification est bien prise en compte.
+
+    test ajoutmembre : L'objectif de ce test est de vérifier que l'ajout d'un membre via la vue ajoutmembre fonctionne correctement. Cela implique :
+            L'accès à la page d'ajout de membre.
+            La soumission d'un formulaire valide pour créer un nouveau membre.
+            La vérification que le membre a bien été ajouté dans la base de données.
+
+    test updatemembre : L'objectif de ce test est de vérifier que la mise à jour d'un membre via la vue updatemembre fonctionne correctement. Il couvre :
+        La création d'un membre de test initialement.
+        La modification des informations du membre.
+        La vérification que le membre a bien été mis à jour dans la base de données.
+    
+    test deletemembre : Ce test vise à valider le bon fonctionnement de la vue deletemembre. Il vérifie deux scénarios principaux :
+        La suppression réussie d'un membre existant.
+        La gestion d'une tentative de suppression d'un membre qui n'existe pas.
+
+    test creeremprunt : Ce test valide le processus de création d'un emprunt. Il couvre deux scénarios principaux :
+        La création réussie d'un emprunt lorsqu'un média est disponible.
+        La gestion correcte du cas où le média n'est pas disponible pour emprunt.
+
+    test retournermedia : Le but de ce test est de s'assurer que le processus de retour d'un média emprunté fonctionne correctement. Le test couvre les points suivants :
+        Le média doit être marqué comme retourné (emprunt supprimé).
+        Le média doit être à nouveau disponible pour d'autres emprunts.
+
+    test listeemprunts : Le test vérifie que la page qui affiche la liste des emprunts retourne bien un contexte contenant la variable emprunts,
+     ce qui signifie que la vue fonctionne correctement et que les emprunts sont passés au template.
+     
+    
+    
+
 
 Pour lancer le projet voici la marche à suivre : 
+vous allez devoir installer python sur votre machine en suivant ce lien : https://www.python.org/downloads/
 
-creer un environement sur votre machine avec cette commande à coller dans votre terminal : 
+une fois python installé creer un environnement virtuel dans lequel nous pourront telecherager le projet: 
+    voici la commande permettant la création d'un environnement : python -m venv NomDuProjet-env
+    puis acceder au fichier script en ecrivant cd Scripts
+    ecrivez "activate"
+    ecrivez cd ../ afin de retourner dans le fichier precedent 
+    ecrivez cd mediatheque
+    puis afin de lancer le projet ecrivez python manage.py runserver
+    et faites CTRL + click sur l'adresse que le terminal va renvoyer.
+
+
