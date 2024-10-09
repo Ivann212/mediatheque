@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header>
+    <a href="/">Accueil</a>
+</header>
+<h1>Ajouter un membres</h1>
+
+    <form action="" method="post" novalidate>
+        {% csrf_token %}
+        {{ creationMembre }}
+        <input type="submit" value="Ajouter">
+    </form>
+<h2>Les membres</h2>
+    <ul>
+         {% for membre in membres %}
+
+             <li> Nom : {{ membre.nom }} Prénom : {{ membre.prenom }}
+                 <a href="{% url 'deletemembre' membre.id %}" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce membre ?');">
+                     Supprimer
+                 </a>
+                 <a href="{% url 'updatemembre' membre.id %}">Modifier</a>
+
+             </li>
+
+
+
+        {% endfor %}
+    </ul>
+    <form method="post">
+        {% csrf_token %}
+        {{ updatemembre.as_p }}  <!-- Affiche le formulaire -->
+        <input type="submit" value="Mettre à jour">
+    </form>
+
+
+
+</body>
+</html>

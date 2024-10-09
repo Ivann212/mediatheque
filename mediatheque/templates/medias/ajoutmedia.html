@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter un média</title>
+</head>
+<header>
+    <a href="/">Accueil</a>
+</header>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ creationmedia.as_p }}
+        <input type="submit" value="Envoyer">
+    </form>
+</body>
+</html>

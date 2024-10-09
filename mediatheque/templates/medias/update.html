@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier un média</title>
+</head>
+<body>
+    <header>
+        <a href="/">Accueil</a>
+    </header>
+
+    <h1>Modifier le média : {{ media.nom }}</h1>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Mettre à jour">
+    </form>
+
+    <a href="{% url 'listemedias' %}">Retour à la liste des médias</a>
+
+    {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+</body>
+</html>

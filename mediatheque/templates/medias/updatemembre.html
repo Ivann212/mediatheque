@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier Membre</title>
+</head>
+<body>
+    <h1>Modifier Membre</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ updatemembre.as_p }}
+        <input type="submit" value="Mettre à jour">
+    </form>
+
+    <a href="{% url 'ajoutmembre' %}">Retour à la liste des membres</a>
+</body>
+</html>

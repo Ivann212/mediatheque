@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des médias</title>
+</head>
+
+<header>
+    {% if user.is_authenticated and user.username == 'Bibliothecaire' %}
+            {% include 'medias/header.html' %}
+        {% endif %}
+</header>
+<body>
+    <h1>Liste des médias</h1>
+    <ul>
+    {% for media in medias %}
+        <li>
+            <strong>Nom :</strong> {{ media.nom }}<br>
+            {% if media.livre %}
+                <strong>Auteur :</strong> {{ media.livre.auteur }}<br>
+            {% elif media.dvd %}
+                <strong>Réalisateur :</strong> {{ media.dvd.realisateur }}<br>
+            {% elif media.cd %}
+                <strong>Artiste :</strong> {{ media.cd.artiste }}<br>
+            {% elif media.jeuxdeplateau %}
+                <strong>Créateur :</strong> {{ media.jeuxdeplateau.createur }}<br>
+            {% endif %}
+            {% if user.is_authenticated and user.username == 'Bibliothecaire' %}
+                <a href="{% url 'deletemedia' media.nom %}" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce média ?');">Supprimer</a>
+                <a href="{% url 'updatemedia' media.nom %}">Modifier</a>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
+

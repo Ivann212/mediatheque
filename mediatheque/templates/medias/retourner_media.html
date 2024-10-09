@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Retourner un média</title>
+</head>
+<body>
+    <header>
+      <a href="/">Retour à l'accueil</a>
+    </header>
+    <h1>Retour d'un média</h1>
+    <form method="POST">
+        {% csrf_token %}
+
+        <label for="membre_nom">Nom du membre :</label>
+        <input type="text" name="membre_nom" id="membre_nom" required>
+
+        <label for="membre_prenom">Prénom du membre :</label>
+        <input type="text" name="membre_prenom" id="membre_prenom" required>
+
+        <label for="media_nom">Titre du média :</label>
+        <input type="text" name="media_nom" id="media_nom" required>
+
+        <button type="submit">Retourner le média</button>
+    </form>
+    <h2>Les membres</h2>
+        <ul>
+            {% for membre in membres %}
+                <li> Nom : {{ membre.nom }} Prénom : {{ membre.prenom }}</li>
+            {% endfor %}
+        </ul>
+</body>
+</html>
