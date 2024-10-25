@@ -68,7 +68,7 @@ une fois python installé creer un environnement virtuel dans lequel nous pourro
 
 pour se connecter à la partie Bibliothécaire voici les identifiants : 
 
-tout d'abords pour pouvoir se connecter il faudrait ecrire /bibliothecaires a la fin de l'url
+Pour pouvoir se connecter il faudrait ecrire /bibliothecaires a la fin de l'url
 
 nom d'utilisateur : Bibliothecaire
 
